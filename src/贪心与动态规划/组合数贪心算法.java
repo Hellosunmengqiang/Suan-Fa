@@ -20,7 +20,7 @@ public class 组合数贪心算法 {
 			{
 				if((list.get(i)+list.get(j)).compareTo(list.get(j)+list.get(i))<0)
 				{
-					String as=list.get(i);
+					String as=list.get(i);//算法用的是直接选择排序进行遍历的
 					list.set(i, list.get(j));
 					list.set(j, as);
 				}

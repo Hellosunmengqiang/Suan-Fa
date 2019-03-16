@@ -7,7 +7,7 @@ public class —°‘Ò≈≈–Ú {
 		Scanner cin=new Scanner(System.in);
 		  int n=cin.nextInt();
 		  
-		 int a[]=new int[n];
+		 int a[]=new int[1001];
 		 for(int i=0;i<n;i++)
 		  {
 			  a[i]=cin.nextInt();

@@ -2,8 +2,8 @@ package 深度与广度算法;
 import java.util.Scanner;
 
 public class 炸弹人广度算法 {
-	static char a[][]=new char[202][202];
-	static int b[][]=new int[444][444];
+	static char a[][]=new char[51][51];
+	static int b[][]=new int[51][51];
 	static int m,n,sx,sy,ex,ey;
 	static int top=0,rear=0;
 	static int fx[][]= {{0,1},{1,0},{0,-1},{-1,0}};
@@ -18,25 +18,28 @@ public class 炸弹人广度算法 {
 		sx=Integer.parseInt(s[2]);
 		sy=Integer.parseInt(s[3]);
 		
-		for(int i=0;i<n;i++)
+		for(int i=0;i<m;i++)
 			a[i]=cin.nextLine().toCharArray();
-		for(int i=0;i<n;i++)
+		for(int i=0;i<m;i++)
 		{
-			for(int j=0;j<m;j++)
+			for(int j=0;j<n;j++)
 			{
 				b[i][j]=0;
 			}
 		}
-		G que[]=new G[10000];
-		
-		for(int i=0;i<10000;i++)
+		G que[]=new G[2501];
+		for(int i=0;i<2501;i++)
 			que[i]=new G();
+		
 		que[rear].xx=sx;
 		que[rear].yy=sy;
+		b[sx][sy]=1;
 		int max=getnum(sx, sy);
+		ex=sx;
+		ey=sy;
 		int sum;
 		rear++;
-		b[sx][sy]=1;
+		
 		int tx,ty;
 		while(top<rear)
 		{

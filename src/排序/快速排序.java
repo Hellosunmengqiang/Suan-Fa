@@ -6,14 +6,14 @@ public class 快速排序 {
 	public static void main(String[] args) {
 		Scanner cin=new Scanner(System.in);
 		int n=cin.nextInt();
-		int a[]=new int[n];
-		for(int i=0;i<n;i++)
+		int a[]=new int[100001];
+		for(int i=1;i<=n;i++)
 		{
 			a[i]=cin.nextInt();
 			
 		}
 		ks(a,1,n);
-		for(int i=0;i<n;i++)
+		for(int i=1;i<=n;i++)
 		{
 			System.out.print(a[i]+" ");
 		}
@@ -21,6 +21,8 @@ public class 快速排序 {
 	public static void ks(int a[],int left,int right)
 	{
 		int i,j,t;
+		if(left>right)
+			return;
 		t=a[left];
 		
 		i=left;

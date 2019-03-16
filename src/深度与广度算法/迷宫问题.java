@@ -13,9 +13,9 @@ public class 迷宫问题 {
 		     m=cin.nextInt();
 		     n=cin.nextInt();
 
-		    for(int i=0;i<m;i++)
+		    for(int i=1;i<=m;i++)
 		    {
-		    	for(int j=0;j<n;j++)
+		    	for(int j=1;j<=n;j++)
 		    	{
 		    		a[i][j]=cin.nextInt();
 		    		b[i][j]=0;
@@ -28,7 +28,10 @@ public class 迷宫问题 {
 		    b[sx][sy]=1;
 		    
 		     dfs(sx,sy,ex,ey,0);
+		     if(min<99999999)
 		     System.out.println(min);
+		     else
+		    	 System.out.println("No Way!");
 	}
 	public static  void dfs(int x,int y,int p,int q,int sum)
 	{
@@ -46,12 +49,11 @@ public class 迷宫问题 {
 		{
 			tx=x+fx[k][0];
 			ty=y+fx[k][1];
-			if(tx<0||tx>m-1||ty<0||ty>n-1)
+			if(tx<1||tx>m||ty<1||ty>n)
 				continue;
 			if(a[tx][ty]==0&&b[tx][ty]==0)
 			{
 				b[tx][ty]=1;
-				System.out.println(tx+" "+ty+" "+sum);  //搜索过程
 				dfs(tx,ty,p,q,sum+1);//往下一层递归
 				b[tx][ty]=0;//取消标记，回到上一层
 				
