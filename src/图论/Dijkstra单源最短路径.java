@@ -1,10 +1,10 @@
 package 图论;
 import java.util.Scanner;
 
-public class 有向单源最短路径 {
-	static int a[][]=new int[12][12];
-	static int dis[]=new int[12];
-	static int b[]=new int[12];
+public class Dijkstra单源最短路径 {
+	static int a[][]=new int[50][50];
+	static int dis[]=new int[50];
+	static int b[]=new int[50];
 	static int m,n,c,d,e,min,u;
 	
 	public static void main(String[] args) {
@@ -25,18 +25,20 @@ public class 有向单源最短路径 {
 			d=cin.nextInt();
 			e=cin.nextInt();
 			a[c][d]=e;
+			//a[d][c]=e;
 			
 		}
 		for(int i=1;i<=m;i++)
-			dis[i]=a[1][i];  //初始化1号到其他顶点的距离
+			dis[i]=a[2][i];  //初始化2(x)号到其他顶点的距离
 		for(int i=1;i<=m;i++)
 			b[i]=0;
+		
 		b[1]=1;
 		
 		for(int i=1;i<=m-1;i++)
 		{
 			min=999999999;
-			for(int j=1;j<=m;j++)//遍历找到距离1号最近的点
+			for(int j=1;j<=m;j++)//遍历找到距离x号最近的点,用来对其他点进行松弛
 			{
 				if(b[j]==0&&dis[j]<min)
 				{

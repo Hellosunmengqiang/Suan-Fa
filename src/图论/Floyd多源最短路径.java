@@ -2,7 +2,7 @@ package 图论;
 
 import java.util.Scanner;
 
-public class 有向多源最短路径 {
+public class Floyd多源最短路径 {
 	static int [][]a=new int[55][55];
 	static int c,d,e,m,n;
 	
@@ -27,6 +27,7 @@ public class 有向多源最短路径 {
 			d=cin.nextInt();
 			e=cin.nextInt();
 			a[c][d]=e;
+			a[d][c]=e;
 			
 		  }
 		  for(int k=1;k<=m;k++)
@@ -46,4 +47,4 @@ public class 有向多源最短路径 {
 		  }
 	}
 
-}//多远最短路径就是有向图中找出任意两个点的最短方案的距离
+}//多远最短路径就是有wu向图中找出任意两个点的最短方案的距离

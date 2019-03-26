@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class 简单动态规划 {
 	public static void main(String[] args) {
 		Scanner cin=new Scanner(System.in);
+		while(cin.hasNext())
+		{
 		int n=cin.nextInt();
 		
 		int a[][]=new int[n][n];  //i是竖坐标，j是横坐标；
@@ -24,6 +26,7 @@ public class 简单动态规划 {
 			}
 		}
 		System.out.println(a[0][0]);
+		}
 	}
 
 }

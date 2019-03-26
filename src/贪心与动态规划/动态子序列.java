@@ -1,53 +1,36 @@
 package 贪心与动态规划;
-
 import java.util.Scanner;
-
 public class 动态子序列{
-    static int[][] shu = new int[200][200];
-
+    static int[][] dp= new int[200][200];
     public static void main(String[] args) {
-        Scanner cin = new Scanner(System.in);
-        String s1 = cin.next();
-        String s2 = cin.next();
-        char[] c1 = s1.toCharArray();
-        char[] c2 = s2.toCharArray();
-        get(c1, c1.length, c2, c2.length);
+        @SuppressWarnings("resource")
+		Scanner cin = new Scanner(System.in);
+        String cs1 = cin.nextLine();
+        String cs2 = cin.nextLine();
+        
+        get(cs1, cs1.length(), cs2, cs2.length());
     }
 
-    private static void get(char[] cs1, int length1, char[] cs2, int length2) {
-        for (int i = 0; i < length1; i++) {
-            shu[i][0] = i;
+    private static void get(String cs1, int length1, String cs2, int length2) {
+        for (int i = 0; i <=length1; i++) {
+            dp[i][0] = i;
         }
-        for (int i = 0; i < length2; i++) {
-            shu[0][i] = i;
+        for (int i = 0; i <=length2; i++) {
+            dp[0][i] = i;
         }
-        for (int i = 1; i < length1; i++) {
-            for (int j = 1; j < length2; j++) {
-                int m = (cs1[i] == cs2[j] ? 0 : 1);
-                int n = shu[i - 1][j] + 1;
-                int z = shu[i][j - 1] + 1;
-                int x = shu[i - 1][j - 1] + m;
-                shu[i][j] = mathmin(n, z, x);
+        for (int i = 1; i <= length1; i++) {
+            for (int j = 1; j <= length2; j++)
+            {
+                if(cs1.charAt(i-1)==cs2.charAt(j-1))
+                	
+                	dp[i][j]=dp[i-1][j-1];
+                else
+                	
+                	dp[i][j]=Math.min(dp[i-1][j-1], Math.min(dp[i-1][j], dp[i][j-1]))+1;
             }
         }
-        System.out.println(shu[length1-1][length2-1]+1);
+        System.out.println(dp[length1][length2]);
     }
 
-    private static int mathmin(int a, int b, int c) {
-    	int t;
-    	if(a<b)
-    		t=a;
-    	else
-    		t=b;
-    		if(t<c)
-    			return t;
-    		else 
-    			return c;
-    		/* int m=a<b?a:b;
-    		 * return m<c?m:c;
-    		 * 
-    		 * */
-        
-    }
 }
 

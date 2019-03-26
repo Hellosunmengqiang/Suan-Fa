@@ -3,13 +3,14 @@ package 图论;
 import java.util.Scanner;
 
 public class 最少转机广度算法 {
-	static int[][]a=new int[51][51];
-	static int b[]=new int[51];
-	static int m,n,s,e,c,d;
-	static int flag=0;
-	
 	public static void main(String[] args) {
 		Scanner cin=new Scanner(System.in);
+		while(cin.hasNext())
+		{
+			int a[][]=new int[101][101];
+			 int b[]=new int[101];
+			 int m,n,s,e,c,d;
+			 int flag=0;
 		   m=cin.nextInt();
 		   n=cin.nextInt();
 		   s=cin.nextInt();
@@ -32,9 +33,9 @@ public class 最少转机广度算法 {
 		   int top=1;
 		   int rear=1;
 		   int cur;
-		   zui que[]=new zui[m];
-		   for(int q=0;q<=m;q++)
-			   que[q]=new zui();
+		   zui1 que[]=new zui1[10001];
+		   for(int q=1;q<10001;q++)
+			   que[q]=new zui1();
 		   
 		   que[rear].x=s;
 		   que[rear].step=0;
@@ -65,9 +66,10 @@ public class 最少转机广度算法 {
             System.out.println(que[rear-1].step);
             else
             	System.out.println("Connot reach");
+		}
 		   
 	}
-	public static class zui{
+	public static class zui1{
 		int step;
 		int x;
 	}

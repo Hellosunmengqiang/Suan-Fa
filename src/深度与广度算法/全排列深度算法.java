@@ -6,8 +6,8 @@ public class 全排列深度算法 {
 	public static void main(String[] args) {
 		Scanner cin=new Scanner(System.in);
 		int n=cin.nextInt();
-		int a[]=new int[10];
-		int b[]=new int[10];
+		int a[]=new int[13];
+		int b[]=new int[13];
 		for(int i=0;i<b.length;i++)
 			b[i]=0;
 		dfs(a,b,1,n);
@@ -20,7 +20,7 @@ public class 全排列深度算法 {
 			for(int i=1;i<=n;i++)
 				System.out.print(a[i]);
 			System.out.println();
-			return;
+			return;//回到最近一次调用dfs的地方
 		}
 		for(int i=1;i<=n;i++)
 		{

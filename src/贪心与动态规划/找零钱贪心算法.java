@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ÕÒÁãÇ®Ì°ĞÄËã·¨ {
 	public static void main(String[] args) {
 		Scanner cin=new Scanner(System.in);
-		int m[]= {25,10,5,1};
+		int m[]= {5,4,2,1};
 		int sum=cin.nextInt();
 		int as[]=getmoney(m,sum);
 		for(int i=0;i<as.length;i++)

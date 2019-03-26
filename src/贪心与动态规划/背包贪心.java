@@ -53,9 +53,9 @@ public class ±³°üÌ°ÐÄ {
 			 m-=w[i];
 		 }
 		
-			 if(index<n)
+		if(index<n)
 			 
-				 x[index]=m/w[index];
+		  x[index]=m/w[index];
 			 
 		 for(int i=0;i<=index;i++)
 		 {

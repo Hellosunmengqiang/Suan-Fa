@@ -30,7 +30,7 @@ public class 有向图遍历之深度算法 {
 			//a[d][c]=e;//无向图使用
 		}
 		b[1]=1;
-		dfs(1,0);
+		dfs(1,0);//计算从一号到五号的最短距离
 		System.out.println(min);
 		
 	}
