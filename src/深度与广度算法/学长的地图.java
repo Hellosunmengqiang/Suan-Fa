@@ -1,6 +1,7 @@
 package 深度与广度算法;
+
 import java.util.Scanner;
-public class 迷宫问题2 {
+public class 学长的地图 {
 	static int fx[][]= {{0,1},{1,0},{0,-1},{-1,0}};
 	static int a[][]=new int[1000][1111];
 	static int b[][]=new int[1000][1111];
@@ -21,8 +22,8 @@ public class 迷宫问题2 {
 				b[i][j]=0;
 			}
 		}
-		 x=cin.nextInt();
-		 y=cin.nextInt();
+		 x=0;
+		 y=0;
 		P1 que[]=new P1[10000];
 		for(int r=0;r<10000;r++)
 		que[r]=new P1();
@@ -32,8 +33,8 @@ public class 迷宫问题2 {
 		que[rear].f=0;
 		que[rear].sept=0;
 		
-		 sx=cin.nextInt();
-		 sy=cin.nextInt();
+		 sx=m-1;
+		 sy=n-1;
 		
 		rear++;
 		b[x][y]=1;
@@ -45,9 +46,9 @@ public class 迷宫问题2 {
 				ty=que[top].yy+fx[k][1];
 				if(tx<0||tx>m-1||ty<0||ty>n-1)
 					continue;
-				if(a[tx][ty]==0&&b[tx][ty]==0)
+				if(a[tx][ty]!=-1&&b[tx][ty]==0)
 				{
-					b[tx][ty]=1;
+					b[tx][ty]=-1;
 					que[rear].f=top;
 					que[rear].xx=tx;
 					que[rear].yy=ty;
@@ -67,7 +68,7 @@ public class 迷宫问题2 {
 			}
 			top++;//走下一个点
 		}
-		System.out.println(que[rear-1].sept);
+		//System.out.println(que[rear-1].sept);
 		int x1[]=new int[1000];
 		int y1[]=new int[1111];
 		int i=0;
@@ -83,11 +84,12 @@ public class 迷宫问题2 {
 		}
 		
 		x1[i]=0;y1[j]=0;
-		  for(int q=i;q>=0;q--)
+		  for(int q=i;q>0;q--)
 		   {
-			System.out.print("("+x1[q]+","+y1[q]+")");
-			System.out.println();
+			System.out.print(a[x1[q]][y1[q]]+"->");
+			
 		  }
+		  System.out.println(a[x1[0]][y1[0]]);
 		
 	}
   public static class P1{
