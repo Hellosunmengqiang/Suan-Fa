@@ -1,6 +1,6 @@
 package 贪心与动态规划;
 import java.util.Scanner;
-public class 背包动态规划{
+public class 背包动态规划{//不可拆分
     public static void main(String[] args){
         Scanner in = new Scanner(System.in);
         while(in.hasNext()){
