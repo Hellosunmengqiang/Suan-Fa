@@ -30,7 +30,7 @@ public class 连接电脑 {
 	}
 	private static int find(int x) {
 		// TODO 自动生成的方法存根
-		return x==f[x]?x:f[x];
+		return x==f[x]?x:(f[x]=find(f[x]));
 	}
 
 	private static void init(int x) {

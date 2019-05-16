@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Floyd多源最短路径 {
 	static int [][]a=new int[55][55];
 	static int c,d,e,m,n;
-	
+	static int INF=Integer.MAX_VALUE;
 	public static void main(String[] args) {
 		Scanner cin=new Scanner(System.in);
 		  m=cin.nextInt();
@@ -19,7 +19,6 @@ public class Floyd多源最短路径 {
 				  else
 					  a[i][j]=99999999;
 			  }
-			  
 		  }
 		  for(int i=1;i<=n;i++)
 		  {
@@ -28,7 +27,6 @@ public class Floyd多源最短路径 {
 			e=cin.nextInt();
 			a[c][d]=e;
 			a[d][c]=e;
-			
 		  }
 		  for(int k=1;k<=m;k++)
 			  for(int i=1;i<=m;i++)
@@ -46,5 +44,4 @@ public class Floyd多源最短路径 {
 			  System.out.println();
 		  }
 	}
-
-}//多远最短路径就是有wu向图中找出任意两个点的最短方案的距离
+}//多源最短路径就是有无向图中找出任意两个点的最短距离方案的距离

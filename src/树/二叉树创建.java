@@ -56,7 +56,7 @@ public class 二叉树创建 {
 	}
 	public void preorder(BinTree root){
 		if(root!=null){
-			visit(root.getData());
+			System.out.print(root.getData()+" ");
 			preorder(root.lChild);
 			preorder(root.rChild);
 		}	
@@ -64,7 +64,7 @@ public class 二叉树创建 {
 	public void inorder(BinTree root){
 		if(root!=null){
 			inorder(root.lChild);
-			visit(root.getData());
+			System.out.print(root.getData()+" ");
 			inorder(root.rChild);
 		}	
 	}
@@ -72,11 +72,8 @@ public class 二叉树创建 {
 		if(root!=null){
 			afterorder(root.lChild);
 			afterorder(root.rChild);
-			visit(root.getData());
+			System.out.print(root.getData()+" ");
 		}	
-	}
-	private void visit(Object obj) {
-		System.out.print(obj+" ");
 	}
 	public Object getData() {
 		return data;
@@ -85,3 +82,7 @@ public class 二叉树创建 {
 		return root;
 	}
 }
+ 
+ 
+ 
+ 

@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class 简单动态规划 {
 	public static void main(String[] args) {
 		Scanner cin=new Scanner(System.in);
-		while(cin.hasNext())
+		int t=cin.nextInt();
+		while(t-->0)
 		{
 		int n=cin.nextInt();
 		

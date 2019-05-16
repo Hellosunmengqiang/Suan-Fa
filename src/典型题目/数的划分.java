@@ -8,10 +8,12 @@ public class 数的划分 {//c++写
 		int n=cin.nextInt();
 		if(n<=0)break;
 		int sum=0;
-		for(int i=1;i<=n;i++)
+		int k=cin.nextInt();
+		sum=get(n,k);
+		/*for(int i=1;i<=n;i++)
 		{
 			sum+=get(n,i);
-		}
+		}*/
 		System.out.println(sum);
 		}	
 	}

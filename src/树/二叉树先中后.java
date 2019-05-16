@@ -1,4 +1,5 @@
 package 树;
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class 二叉树先中后{
@@ -26,6 +27,7 @@ public class 二叉树先中后{
             postOrder(root.left);
             postOrder(root.right);
             System.out.print(root.val);
+          
         }
     }
     private static node createTree(char[] pre,char[] ord){

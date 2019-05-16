@@ -16,7 +16,7 @@ public class ¶þ·Ö²éÕÒ {
         while (right!=left){
             int mid = (left+right)/2;
             
-            if(x <= arr[mid]){
+            if(x <=arr[mid]){
                 right = mid;
             }else{
                 left = mid+1;

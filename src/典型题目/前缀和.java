@@ -13,12 +13,18 @@ public class Ç°×ººÍ {
 		int sum[]=new int[n];
 		for(int i=1;i<n;i++)
 			sum[i]=sum[i-1]+a[i];
-		while(m-->0)
+		/*while(m-->0)
 		{
 			int b=cin.nextInt();
 			int c=cin.nextInt();
 			System.out.println(sum[c]-sum[b-1]);
+		}*/
+		int min=99999999;
+		for(int i=0;i<n-m;i++)
+		{
+			min=min<(sum[i+m]-sum[i])?min:(sum[i+m]-sum[i]);
 		}
+		System.out.println(min);
 	}
 
 }

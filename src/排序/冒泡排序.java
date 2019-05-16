@@ -3,6 +3,7 @@ package ≈≈–Ú;
 import java.util.Scanner;
 
 public class √∞≈›≈≈–Ú {
+	static int min=0;
 	public static void main(String[] args) {
 		Scanner cin=new Scanner(System.in);
 		int n=cin.nextInt();
@@ -12,8 +13,10 @@ public class √∞≈›≈≈–Ú {
 			a[i]=cin.nextInt();
 		}
 		maopao(a,n);
-		for(int i=0;i<a.length;i++)
+		for(int i=0;i<a.length-1;i++)
 			System.out.print(a[i]+" ");
+		System.out.println(a[a.length-1]);
+		System.out.println(min);
 	}
 	public static int[] maopao(int a[],int n)
 	
@@ -25,6 +28,7 @@ public class √∞≈›≈≈–Ú {
 			{
 				if(a[j]>a[j+1])
 				{
+					min++;
 					t=a[j];
 					a[j]=a[j+1];
 					a[j+1]=t;

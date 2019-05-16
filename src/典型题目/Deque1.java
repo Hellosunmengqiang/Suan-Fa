@@ -19,6 +19,7 @@ public class Deque1 {
 				int t=q.getLast();
 				q.pollLast();
 				q.addFirst(t);
+				
 			}
 			q.addFirst(a[i]);
 		}

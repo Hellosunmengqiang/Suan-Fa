@@ -31,5 +31,4 @@ public class Bellman负权边最短路径 {
 		for(int i=1;i<=m;i++)
 			System.out.print(dis[i]+" ");
 	}
-
 }
